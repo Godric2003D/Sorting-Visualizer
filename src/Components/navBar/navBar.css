@@ -1,0 +1,26 @@
+
+.navbar.center{
+    text-align: center !important;
+    font-size: large !important;
+}
+.cont{
+    height: 100px !important;
+    
+}
+.navbar-light{
+    color: aliceblue !important;
+}
+#tt{
+    font-size: 30px !important;
+    font-family: Garamond, serif !important;
+}
+
+#t{
+    font-size: 20px !important;
+    font-family: Garamond, serif !important;
+    color: grey !important;
+}
+
+#rr{
+    padding-left: 72px !important;
+}
