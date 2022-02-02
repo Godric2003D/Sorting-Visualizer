@@ -2,21 +2,18 @@
 .array-cont{
     padding-top: 30px;
     width: 100%;
-    background-color: rgba(233, 238, 162, 0.726)
+    background-color: rgba(229, 230, 224, 0.726)
    
 
 }
 .arr-bar{
 
-    width: 4px;
-    background-color: pink;
+    width: 17px;
+    background-color: darkblue;
     display: inline-block;
     margin: 0 2.4px;
     height: 50px;
     animation: mymove 5s infinite;
 }
 
-@keyframes mymove {
-    from {background-color: red;}
-    to {background-color: blue;}
-  }
+

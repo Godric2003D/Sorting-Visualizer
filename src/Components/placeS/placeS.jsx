@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './placeS.css'
+import {mSort} from '../Algorithms/merge'
+const red = 'red';
+const blue = 'blue';
 
 class PlaceS extends Component{
     
@@ -7,13 +10,18 @@ class PlaceS extends Component{
         super(props);
         this.state={
             array:[],
-            y:70
+            y:36,
+            z:100
         };
         this.handleChange = this.handleChange.bind(this);
+        this.mergeSo = this.mergeSo.bind(this);
+        this.handleSpeed = this.handleSpeed.bind(this);
+    
+        
     }
     
     componentDidMount(){
-        this.resetArray(150);
+        this.resetArray(40);
         
     }
     resetArray(e){
@@ -22,9 +30,10 @@ class PlaceS extends Component{
         const array = [];
         for(let i=0;i<e;i++)
         {
-            array.push(randomm(10,500));
+            array.push(randomm(10,450));
         }
         this.setState({array});
+        console.log(array)
     }
     handleChange= (event) => {
         const x=event.target.value;
@@ -34,9 +43,44 @@ class PlaceS extends Component{
         this.setState({
             y:f,
         });
-  
+        
        
    }
+   handleSpeed = (event) => {
+       const s = event.target.value;
+       var q = parseInt(s);
+       
+       this.setState({
+        z:q,
+    });
+
+   }
+   mergeSo(){
+    const animations = mSort(this.state.array);
+   
+   
+    for (let i = 0; i < animations.length; i++) {
+      const arrayBars = document.getElementsByClassName('arr-bar');
+      const isColorChange = i % 3 !== 2;
+      if (isColorChange) {
+        const [barOneIdx, barTwoIdx] = animations[i];
+        const barOneStyle = arrayBars[barOneIdx].style;
+        const barTwoStyle = arrayBars[barTwoIdx].style;
+        const color = i % 3 === 0 ? red : blue;
+        setTimeout(() => {
+          barOneStyle.backgroundColor = color;
+          barTwoStyle.backgroundColor = color;
+        }, i * 1);
+      } else {
+        setTimeout(() => {
+          const [barOneIdx, newHeight] = animations[i];
+          const barOneStyle = arrayBars[barOneIdx].style;
+          barOneStyle.height = `${newHeight}px`;
+        }, i * 1);
+      }
+    }
+  }
+   
     render(){
         function refreshPage() {
             window.location.reload(false);
@@ -57,14 +101,17 @@ class PlaceS extends Component{
                             </li>
                             <li className='nav-item pt-2 pl-0'>
                                 <span id='size'>
-                                <input  type="range" min={10} max={150} onChange={this.handleChange} value={this.state.y} />
+                                <input  type="range" min={10} max={60} onChange={this.handleChange} value={this.state.y} />
                                 </span>
                             </li>
                             <li className='nav-item' id='rr'>
                                 <a className='nav-link ' id='t' href="">Sorting speed</a>
                             </li>
                             <li className='nav-item pt-2 pl-0'>
-                                <input type="range"/>
+                                <input type="range" min={50} max={200} onChange={this.handleSpeed} value={this.state.z}/>
+                            </li>
+                            <li className='nav-item px-4 pt-1 '>
+                                <button className='btn btn-outline-success' onClick={this.mergeSo}>Merge Sort</button>
                             </li>
                             
                         </ul>
@@ -87,4 +134,13 @@ class PlaceS extends Component{
 function randomm(min,max){
     return Math.floor(Math.random()* (max-min+1)+min)
 }
+function arraysAreEqual(arrayOne, arrayTwo) {
+    if (arrayOne.length !== arrayTwo.length) return false;
+    for (let i = 0; i < arrayOne.length; i++) {
+      if (arrayOne[i] !== arrayTwo[i]) {
+        return false;
+      }
+    }
+    return true;
+  }
 export default PlaceS;
