@@ -1,0 +1,19 @@
+#l{
+    align-items: center !important;
+    padding-top: 50px;
+}
+.grey{
+    background-color: rgb(97, 153, 185) !important;
+}
+.siz{
+    font-family: sans-serif;
+    font-size: 20px;
+    background-color: gray;
+    padding: 20px;
+    border-radius: 5%;
+}
+.c{
+    text-decoration: solid !important;
+    font-size: 20px;
+    color: black !important;
+}

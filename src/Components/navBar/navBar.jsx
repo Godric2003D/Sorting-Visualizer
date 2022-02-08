@@ -11,7 +11,7 @@ class NavBar extends Component {
                     <div className='container cont'>
                         <div className='navbar-header '>
                             <a className='navbar-brand navbar-light tt' id='tt' href="#">Sorting Visualizer</a>
-                            {/* <Link exact to="/">Home</Link> */}
+                            
                         </div>
 
                     </div>

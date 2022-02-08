@@ -1,0 +1,31 @@
+.ttt{
+    text-align: center !important;
+    margin-top: 130px !important;
+    background-color: rgb(85, 145, 125);
+    animation: fadeInAnimation ease 1s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.aa{
+    transform: translate(420%,-75%);
+}
+.qqq{
+    visibility: hidden;
+}
+#ww{
+    display: none;
+}
+.o{
+    display: none;
+}
+
+
