@@ -23,7 +23,7 @@ class HomE extends Component {
         
         return (
             <React.Fragment>
-                <div className='grey'>
+
                 <div className='jumbotron jumbotron-fluid' id='ww'>
                     <div className='container'>
                         <h1 id='l'> Sorting Visualizer </h1>
@@ -32,14 +32,15 @@ class HomE extends Component {
 
                 </div>
                 <div className='container ttt py-5 mx-auto'>
-                    <button className="btn btn-outline-warning aa" id='yy' onClick={this.removal}><Link className="nav-link" exact to="/homes"><b>Proceed</b></Link></button>
+                    
                     <h1 className=''>Welcome to an Interactive Project</h1>
                     <h3>Sorting Visualizer</h3>
                     <h4>Creator: Debayan Ray</h4>
+                    <button className="btn btn-outline-warning aa mt-5" id='yy' onClick={this.removal}><Link className="nav-link" exact to="/homes"><b>Proceed</b></Link></button>
 
                 </div>
                 
-                </div>
+              
             </React.Fragment>
         );
     }
